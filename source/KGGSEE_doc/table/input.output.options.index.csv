@@ -1,0 +1,20 @@
+﻿Option,Description,Examples with default value
+--a-col ,column name of alternative or minor allele,--a1-col A1
+--a2-col,column name of reference or major allele,--a2-col A2
+--beta-col,column name of coefficients,--beta-col OR
+--beta-or,whether the coefficients are odds ratio,--beta-or y
+--buildver,Reference genome version of the coordinates,--buildver hg19
+--chrom-col ,column name of chromosome ID,--chrom-col CHR
+--eqtl-file,Path of eQTL file,
+--excel,Output results in Excel format,
+--expression-gty-vcf,,
+--freq-a1-col,column name of frequencies of A1 allele,--freq-a1-col FRQ_U
+--keep-ref,save the encoded genotypes in VCF for future usage,
+--nmiss-col,column name of sample size with non-missing genotypes,--nmiss-col Neff
+--out,Output path and prefix name,--out ./test/test1
+--pos-col  ,column name of positions,--pos-col BP
+--p-col,column name of p-values,--p-col P
+--saved-ref,the path of encoded genotypes by last time,--saved-ref ./test/test1
+--se-col ,column name of standard errors of the coefficients,--se-col SE
+--sum-file,Path of the file storing GWAS summary statistics,--sum-ref ./path/to/gwas_summary_file
+--vcf-ref,The path of vcf file and name,--vcf-ref ./path/to/vcf_file
