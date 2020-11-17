@@ -35,10 +35,6 @@ However, you many need to install several R packages which will be called by kgg
     ``install.packages(“NNLM”, dep=TRUE)``
     More installation instruction can be found at https://github.com/linxihui/NNLM.
 
-- MASS
-
-    ``install.packages(“MASS”, dep=TRUE)``
-
 - MendelianRandomization
 
     The first step is to install the PhenoScanner package (and the MendelianRandomization package if you haven't done this previously):
