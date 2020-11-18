@@ -1,4 +1,4 @@
 ﻿Option,Description,Examples with default value
---nt ,CPU cores for the analysis,--nt 12
---buildver,Versions of genomic coordinates. The supported versions are hg19 and hg38.,--buildver hg19
---resource,The path and folder of kggsee.,
+--nt,CPU cores for the analysis,--nt 12
+--buildver,reference genome version of the coordinates. The supported versions are hg19 and hg38.,--buildver hg19
+--resource,the path and folder of kggsee.,
