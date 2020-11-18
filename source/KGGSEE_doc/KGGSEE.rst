@@ -54,7 +54,60 @@ Resource data
 
 Under the folder of kggsee, there is a folder named **resources**, which contains running resource data, e.g., gene boundary and gene expression. KGGSEE will automatically download required resource files. Users can all manually download the files and put them into the corresponding folders.
 
-Functions and examples
+Tutorials
+=========================
+
+Gene-based association analysis
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Purpose：Detect associated genes of a phenotype by GWAS summary statistics
+  - Input data:
+     
+    1. GWAS summary statistics compressed in a text file (a fabled data set for education purpose): examples/gwas.sum.stat.gz
+     
+    2. Genotypes in VCF format to approximate correction between summary statistics: resources/hg19/gty/1kg.phase3.v5.shapeit2.eur.hg19.chr1.vcf.gz
+
+.. code:: shell 
+
+    java -Xmx10g -jar kggsee.jar --gene-assoc --sum-file examples/gwas.sum.stat.gz --vcf-ref resources/hg19/gty/1kg.phase3.v5.shapeit2.eur.hg19.chr1.vcf.gz --keep-ref --nt 10 --out examples/out/geneAssoc
+
+
+Gene-based causality analysis
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Purpose：Detect causal genes of a phenotype by GWAS summary statistics and eQTL
+
+  - Input data:
+
+    1. GWAS summary statistics compressed in a text file (a fabled data set for education purpose): examples/gwas.sum.stat.gz
+   
+    2. Genotypes in KGGSEE objects (generated last time) to approximate correction between summary statistics: examples/out/geneAssoc
+   
+    3. eQTL summary statistics compressed in a text file：resources/hg19/eqtl/Brain-FrontalCortex_BA9_.transcript.maf05.p05.gz.eqtl.txt.gz
+     
+.. code:: shell  
+
+   java -Xmx10g -jar kggsee.jar --macg --eqtl-file resources/hg19/eqtl/Brain-FrontalCortex_BA9_.transcript.maf05.p05.gz.eqtl.txt.gz --filter-maf-le 0.05 --sum-file examples/gwas.sum.stat.gz --beta-or y --saved-ref  examples/out/geneAssoc --nt 10 --out examples/out/macg --excel
+
+
+Estimate relevant cell-types of a phenotype
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  
+Purpose：Estimate relevant cell-types of a phenotype and finely map associated genes according to selective expression
+   - Input data:
+    
+     1. GWAS summary statistics compressed in a text file (a fabled data set for education purpose): examples/gwas.sum.stat.gz
+     
+     2. Genotypes in KGGSEE objects (generated last time) to approximate correction between summary statistics: examples/out/geneAssoc
+     
+     3. Gene expression data compressed in a text file：resources/hg19/eqtl/Brain-FrontalCortex_BA9_.transcript.maf05.p05.gz.eqtl.txt.gz
+     
+.. code:: shell
+
+     java -Xmx10g -jar kggsee.jar --macg --eqtl-file resources/hg19/eqtl/Brain-FrontalCortex_BA9_.transcript.maf05.p05.gz.eqtl.txt.gz --filter-maf-le 0.05 --sum-file examples/gwas.sum.stat.gz --beta-or y --saved-ref  examples/out/geneAssoc --nt 10 --out examples/out/macg --excel
+
+
+
+Functions
 =========================
 
 Gene-based association analysis by an effective chi-square statistics (ECS)
