@@ -1,7 +1,10 @@
-.. centered:: KGGSEE: A biological Knowledge-based mining platform for Genomic and Genetic association Summary statistics using gEne Expression
+.. raw:: html
+
+    <p style="font-size: 28px; line-height: 35px; font-weight: bold" align=center>
+        KGGSEE: A biological Knowledge-based mining platform for Genomic and Genetic association Summary statistics using gEne Expression
+    </p>
 
 .. centered:: User manual 1.0
-
 .. centered:: Miaoxin Li, Lin Jiang
 
 Introduction
@@ -18,12 +21,13 @@ Installation
 kggsee.jar
 ~~~~~~~~~~~~~~~
 
-The main library of KGGSEE, kggsee.jar, does not need an installation procedure as long as its `Java Runtime Environment(JRE) v1.8 <https://www.oracle.com/java/technologies/javase-jre8-downloads.html>`_(or up) is pre-installed in your machine. The kggsee.jar can be directly executed given a file path
+The main library of KGGSEE, kggsee.jar, does not need an installation procedure as long as its `Java Runtime Environment(JRE) v1.8 <https://www.oracle.com/java/technologies/javase-jre8-downloads.html>`_ (or up) is pre-installed in your machine. The kggsee.jar can be directly executed given a file path
 
 R packages
 ~~~~~~~~~~~~~
 
-However, you many need to install several R packages which will be called by kggsee.jar. The following are instructions for R package installation under the interactive working interface of R.
+.. note::
+    However, you many need to install several R packages which will be called by kggsee.jar. The following are instructions for R package installation under the interactive working interface of R.
 
 - Rserve
 
@@ -63,9 +67,9 @@ Gene-based association analysis
 Purpose: Detect associated genes of a phenotype by GWAS summary statistics
  - Input data:
      
-   1. GWAS summary statistics compressed in a text file(a fabled data set for education purpose): examples/gwas.sum.stat.gz
+   1. GWAS summary statistics compressed in a text file(a fabled data set for education purpose): *examples/gwas.sum.stat.gz*
      
-   2. Genotypes in VCF format to approximate correction between summary statistics: resources/hg19/gty/1kg.phase3.v5.shapeit2.eur.hg19.chr1.vcf.gz
+   2. Genotypes in VCF format to approximate correction between summary statistics: *resources/hg19/gty/1kg.phase3.v5.shapeit2.eur.hg19.chr1.vcf.gz*
 
 .. code:: shell 
 
@@ -78,11 +82,11 @@ Gene-based causality analysis
 Purpose: Detect causal genes of a phenotype by GWAS summary statistics and eQTL
  - Input data:
 
-   1. GWAS summary statistics compressed in a text file(a fabled data set for education purpose): examples/gwas.sum.stat.gz
+   1. GWAS summary statistics compressed in a text file(a fabled data set for education purpose): *examples/gwas.sum.stat.gz*
    
-   2. Genotypes in KGGSEE objects(generated last time) to approximate correction between summary statistics: examples/out/geneAssoc
+   2. Genotypes in KGGSEE objects(generated last time) to approximate correction between summary statistics: *examples/out/geneAssoc*
    
-   3. eQTL summary statistics compressed in a text file:resources/hg19/eqtl/Brain-FrontalCortex_BA9_.transcript.maf05.p05.gz.eqtl.txt.gz
+   3. eQTL summary statistics compressed in a text file: *resources/hg19/eqtl/Brain-FrontalCortex_BA9_.transcript.maf05.p05.gz.eqtl.txt.gz*
      
 .. code:: shell  
 
@@ -95,11 +99,11 @@ Estimate relevant cell-types of a phenotype
 Purpose: Estimate relevant cell-types of a phenotype and finely map associated genes according to selective expression
  - Input data:
     
-   1. GWAS summary statistics compressed in a text file(a fabled data set for education purpose): examples/gwas.sum.stat.gz
+   1. GWAS summary statistics compressed in a text file(a fabled data set for education purpose): *examples/gwas.sum.stat.gz*
      
-   2. Genotypes in KGGSEE objects(generated last time) to approximate correction between summary statistics: examples/out/geneAssoc
+   2. Genotypes in KGGSEE objects(generated last time) to approximate correction between summary statistics: *examples/out/geneAssoc*
      
-   3. Gene expression data compressed in a text file: resources/hs_scRNA_cluster_mean.tsv.gz
+   3. Gene expression data compressed in a text file: *resources/hs_scRNA_cluster_mean.tsv.gz*
      
 .. code:: shell
 
@@ -112,13 +116,13 @@ eQTL-guided gene-based association analysis
 Purpose: Detect associated genes of a phenotype by GWAS summary statistics guided by eQTLs of a celltype
  - Input data:
      
-   1. GWAS summary statistics compressed in a text file(a fabled data set for education purpose): examples/gwas.sum.stat.gz
+   1. GWAS summary statistics compressed in a text file(a fabled data set for education purpose): *examples/gwas.sum.stat.gz*
      
-   2. Genotypes in KGGSEE objects(generated last time) to approximate correction between summary statistics: examples/out/geneAssoc
+   2. Genotypes in KGGSEE objects(generated last time) to approximate correction between summary statistics: *examples/out/geneAssoc*
 
-   3. Gene expression data compressed in a text file: resources/gtex.v8.transcript.mean.tsv.gz
+   3. Gene expression data compressed in a text file: *resources/gtex.v8.transcript.mean.tsv.gz*
 
-   4. eQTL summary statistics compressed in a text file: resources/hg19/eqtl/Brain-FrontalCortex_BA9_.transcript.maf05.p05.gz.eqtl.txt.gz
+   4. eQTL summary statistics compressed in a text file: *resources/hg19/eqtl/Brain-FrontalCortex_BA9_.transcript.maf05.p05.gz.eqtl.txt.gz*
 
 .. code:: shell
 
