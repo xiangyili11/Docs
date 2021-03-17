@@ -126,7 +126,7 @@ Purpose: Detect associated genes of a phenotype by GWAS summary statistics guide
 
 .. code:: shell
 
-  java -Xmx10g -jar kggsee.jar --gene-finemapping --sum-file examples/gwas.sum.stat.gz --saved-ref  examples/out/geneAssoc --expression-file resources/gtex.v8.transcript.mean.tsv.gz --eqtl-file resources/hg19/eqtl/Brain-FrontalCortex_BA9_.transcript.maf05.p05.gz.eqtl.txt.gz --eqtl-p-cut 0.01 --nt 10 --out examples/out/geneAssoceQTL
+  java -Xmx10g -jar kggsee.jar --gene-finemapping --sum-file examples/gwas.sum.stat.gz --saved-ref  examples/out/geneAssoc --expression-file resources/gtex.v8.transcript.mean.tsv.gz --eqtl-file resources/hg19/eqtl/Brain-FrontalCortex_BA9_.transcript.maf05.p05.gz.eqtl.txt.gz --filter-eqtl-p 0.01 --nt 10 --out examples/out/geneAssoceQTL
 
 
 Functions
@@ -283,7 +283,7 @@ Required options
 
 - ``--gene-finemapping``
 - ``--eqtl-file [path/to/eQTL/file of genes or transcripts]``
-- ``--eqtl-p-cut 0.01``
+- ``--filter-eqtl-p 0.01``
 - ``--expression-file [path/to/expression/file]``
 - ``--calcu-selectivity``
 - ``--sum-file [/path/to/summary/file]``
@@ -320,7 +320,7 @@ Explanations and Optional options
         99334	A	G	0.088	0.071	0.035	0.043	56	0.07
         …	…	…	…	…	…	…	…	…
     
-- ``--eqtl-p-cut``: Set the *p*-value cutoff to filter out less significant eQTL for the analysis.
+- ``--filter-eqtl-p``: Set the *p*-value cutoff to filter out less significant eQTL for the analysis.
 - ``--sum-file``: See above description. 
 - ``--filter-maf-le``: See above description.
 - ``--out``: Specify the path and prefix name of the output files. There are three main result files. One is the gene-based association result file, named ***.gene.txt** or ***.gene.xls**. The following
